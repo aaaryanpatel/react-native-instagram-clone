@@ -1,9 +1,13 @@
 import { ClerkProvider, } from "@clerk/clerk-expo";
 import { tokenCache } from "@/cache";
 import {ConvexProviderWithClerk } from "convex/react-clerk"
-import { ClerkLoaded, useAuth } from "@clerk/clerk-react";
+import { ClerkLoaded } from "@clerk/clerk-react";
 import { ConvexReactClient } from "convex/react";
 import { Children } from "react";
+import React from "react";
+import { useAuth } from "@clerk/clerk-expo"; 
+
+
 
 const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
 

@@ -12,7 +12,7 @@ export default defineSchema({
         followers: v.number(),
         following: v.number(),
         posts: v.number(),
-        clerkId: v.number(),
+        clerkId: v.string(),
 
 
 

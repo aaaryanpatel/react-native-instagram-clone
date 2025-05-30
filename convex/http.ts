@@ -6,6 +6,10 @@ import { httpAction, } from "./_generated/server";
 
 export const http = httpRouter();
 
+// 1 - we need to make sure that the webhook event is coming from clerk 
+// 2 - if so, we will listen for the user.created event
+// 3 - we will save the user to the database 
+
 http.route({
     path:"/clerk-webhook",
     method:"POST",
@@ -50,7 +54,8 @@ http.route({
         if(eventType === "user.created") {
             const { id, email_addresses, first_name, last_name, image_url } = evt.data
             
-            const email = email_addresses[0].email_addresses;
+            const email = email_addresses[0]?.email_address;
+
             const name = `${first_name || ""} ${last_name || ""}`.trim();
 
             try {
@@ -72,5 +77,5 @@ http.route({
     })
 });
 
-// export default http;
+export default http;
 
