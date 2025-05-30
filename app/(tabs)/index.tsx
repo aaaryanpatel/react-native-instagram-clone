@@ -7,7 +7,7 @@ export default function Index() {
     <View style={styles.container}>
 
       
-      <Link href="/notifications">Feed Screen in tabs</Link>
+      {/* HEADER */}
       
     </View>
   );
